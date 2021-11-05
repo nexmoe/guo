@@ -6,12 +6,13 @@
 				<n-message-provider><router-view /></n-message-provider>
 			</div>
 		</n-layout-content>
-		<n-layout-footer></n-layout-footer>
+		<n-layout-footer><Footer/></n-layout-footer>
 	</n-layout>
 </template>
 
 <script setup>
 import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 import {
 	NLayout,
 	NLayoutHeader,
