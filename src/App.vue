@@ -20,6 +20,7 @@ import {
 	NLayoutFooter,
 	NMessageProvider
 } from "naive-ui";
+
 </script>
 
 <style>
@@ -28,7 +29,7 @@ import {
 	 background-image: linear-gradient( #f5f5f5, #3da993);
 }
 .container {
-	max-width: 1200px;
+	width: 1200px;
 	margin: 0 auto;
 }
 </style>
