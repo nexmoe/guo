@@ -1,10 +1,12 @@
 <template>
-	<n-data-table :columns="columns" :data="data" :pagination="pagination" />
+	<n-card :title="'2333'"
+		><n-data-table :columns="columns" :data="data" :pagination="pagination"
+	/></n-card>
 </template>
 
 <script>
 import { h, defineComponent } from "vue";
-import { NDataTable, NButton, useMessage } from "naive-ui";
+import { NCard, NDataTable, NButton, useMessage } from "naive-ui";
 import priceData from "./price.json";
 
 const createColumns = ({ sendMail }) => {
@@ -21,7 +23,7 @@ const createColumns = ({ sendMail }) => {
 			title: "目的港",
 			key: "目的港",
 		},
-        {
+		{
 			title: "运价",
 			key: "运价",
 		},
@@ -53,7 +55,9 @@ export default defineComponent({
 			data: createData(),
 			columns: createColumns({
 				sendMail(rowData) {
-					message.info("查看：" + rowData.启运港 + "-" + rowData.目的港);
+					message.info(
+						"查看：" + rowData.启运港 + "-" + rowData.目的港
+					);
 				},
 			}),
 			pagination: {

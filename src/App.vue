@@ -23,8 +23,12 @@ import {
 </script>
 
 <style>
+.n-layout {
+	background-color:#f5f5f5 !important;
+	 background-image: linear-gradient( #f5f5f5, #3da993);
+}
 .container {
-	max-width: 1060px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 </style>

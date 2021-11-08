@@ -20,11 +20,18 @@
 					/></a>
 				</n-carousel>
 			</n-grid-item>
-			<n-grid-item :span="1">
-				<img
-					style="width:100%"
-					src="https://i.dawnlab.me/155882fff237aa4054d9629c85871dce.jpg"
-			/></n-grid-item>
+			<n-grid-item style="height: 374px;overflow-y: scroll;background:#fff;" :span="1">
+				<n-list bordered style="margin: 0;">
+					<n-list-item v-for="item in 17">
+						<n-thing
+							title="中国联通在全国启动 5G 消息试商用"
+							description="今天，中国联通在全国启动 5G 消息试商用，并开展“5G 消息体验招募活动”，将享受更丰富、便捷、智能、安全的 5G 消息新体验。"
+						>
+						</n-thing>
+					</n-list-item>
+				</n-list>
+				</n-grid-item
+			>
 		</n-grid>
 		<n-grid :x-gap="12" :y-gap="8" :cols="3">
 			<n-grid-item v-for="item in datax">
@@ -43,7 +50,7 @@
 	</n-space>
 </template>
 
-<script setup>
+<script setup> 
 import {
 	NCarousel,
 	NGrid,
@@ -52,13 +59,12 @@ import {
 	NCard,
 	NTag,
 	NImage,
+	NList,
+	NListItem,
+	NThing,
 } from "naive-ui";
 import datax from "./index.json";
 import router from "../router/index";
-
-const routerpath = () => {
-	router.push("/price/123");
-};
 </script>
 
 <style>

@@ -13,9 +13,12 @@
 
 <style scoped>
 footer {
+    border-top: 1px solid #fff;
+    paddig-top: 60px;
     white-space: pre-line;
-    background-color: #f5f5f5;
+    background-color: #3da993;
     padding: 20px 0;
     text-align: center;
+    color: #fff
 }
 </style>
