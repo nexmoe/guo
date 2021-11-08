@@ -65,6 +65,9 @@ import {
 } from "naive-ui";
 import datax from "./index.json";
 import router from "../router/index";
+const routerpath = () => {
+	router.push("/price/123");
+};
 </script>
 
 <style>
