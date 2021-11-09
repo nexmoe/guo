@@ -3,25 +3,19 @@
 		<n-grid :x-gap="12" :y-gap="8" :cols="3">
 			<n-grid-item :span="2">
 				<n-carousel autoplay show-arrow>
-					<a href="https://shu.nexmoe.com/#/"
-						><img
-							class="carousel-img"
-							src="https://shu.nexmoe.com/assets/Snipaste_2021-10-29_00-26-15.0f6b4746.png"
-					/></a>
-					<a href="https://shu.nexmoe.com/#/"
-						><img
-							class="carousel-img"
-							src="https://shu.nexmoe.com/assets/Snipaste_2021-10-29_00-26-15.0f6b4746.png"
-					/></a>
-					<a href="https://shu.nexmoe.com/#/"
-						><img
-							class="carousel-img"
-							src="https://shu.nexmoe.com/assets/Snipaste_2021-10-29_00-26-15.0f6b4746.png"
-					/></a>
+					<img class="carousel-img" :src="getpic('1.jpg')" />
+					<img class="carousel-img" :src="getpic('2.jpg')" />
+					<img class="carousel-img" :src="getpic('3.jpg')" />
+					<img class="carousel-img" :src="getpic('4.jpg')" />
+					<img class="carousel-img" :src="getpic('5.jpg')" />
+					<img class="carousel-img" :src="getpic('6.jpg')" />
 				</n-carousel>
 			</n-grid-item>
-			<n-grid-item style="height: 374px;overflow-y: scroll;background:#fff;" :span="1">
-				<n-list bordered style="margin: 0;">
+			<n-grid-item
+				style="height: 293px; overflow-y: scroll; background: #fff"
+				:span="1"
+			>
+				<n-list bordered style="margin: 0">
 					<n-list-item v-for="item in 17">
 						<n-thing
 							title="中国联通在全国启动 5G 消息试商用"
@@ -30,8 +24,7 @@
 						</n-thing>
 					</n-list-item>
 				</n-list>
-				</n-grid-item
-			>
+			</n-grid-item>
 		</n-grid>
 		<n-grid :x-gap="12" :y-gap="8" :cols="3">
 			<n-grid-item v-for="item in datax">
@@ -50,7 +43,7 @@
 	</n-space>
 </template>
 
-<script setup> 
+<script setup>
 import {
 	NCarousel,
 	NGrid,
@@ -65,6 +58,12 @@ import {
 } from "naive-ui";
 import datax from "./index.json";
 import router from "../router/index";
+import { getCurrentInstance } from "vue";
+const getpic = (name) => {
+	return getCurrentInstance().appContext.config.globalProperties.$getpic(
+		name
+	);
+};
 const routerpath = () => {
 	router.push("/price/123");
 };

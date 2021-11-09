@@ -5,7 +5,7 @@
 				<img
 					class="logo"
 					width="32"
-					src="https://shu.nexmoe.com/assets/icon.b780f778.png"
+					:src="getpic('logo.jpg')"
 					alt="Logo"
 				/>
 				真橙物联
@@ -32,14 +32,27 @@
 	</div>
 </template>
 <script setup>
-import { ref, h } from "vue";
-import { NInput, NMenu, NTabs, NTabPane } from "naive-ui";
+import { ref, h, getCurrentInstance } from "vue";
+import { NInput, NMenu } from "naive-ui";
 import { RouterLink } from "vue-router";
 
+const getpic = (name) => {
+	return getCurrentInstance().appContext.config.globalProperties.$getpic(name)
+}
+const activeKey = ref(null);
 const value = ref(null);
 const menuOptions = [
 	{
-		label: "登录",
+		label: () =>
+			h(
+				RouterLink,
+				{
+					to: {
+						path: '/login'
+					}
+				},
+				{ default: () => "登录" }
+			),
 		key: "login",
 	}
 ];

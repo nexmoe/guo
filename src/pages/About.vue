@@ -1,14 +1,16 @@
 <template>
-<div class="container">
-	<article>
-		<h1>简介</h1>
-		<ul><li><p>企业文化：事业、合作、创新</p>
-</li><li><p>企业愿景：成为全球物流交易和结算服务平台</p>
-</li><li><p>企业使命：做全球中小物流企业的盈利帮手</p>
-</li><li><p>企业目标：帮助全球百万中小物流企业盈利</p>
-</li></ul>
-<hr>
-		{{ `真橙物流科技有限公司成立于2021年，
+	<div class="container">
+		<article>
+			<h1>简介</h1>
+			<ul>
+				<li><p>企业文化：事业、合作、创新</p></li>
+				<li><p>企业愿景：成为全球物流交易和结算服务平台</p></li>
+				<li><p>企业使命：做全球中小物流企业的盈利帮手</p></li>
+				<li><p>企业目标：帮助全球百万中小物流企业盈利</p></li>
+			</ul>
+			<hr />
+			{{
+				`真橙物流科技有限公司成立于2021年，
 
 致力成为全球物流交易和结算服务平台。
 
@@ -30,16 +32,33 @@
 
 公司成员介绍：张旭 秦红欣 韩晓婷 安乐宁 张恺 陆子健 刘丽
 
-荣获奖项：“互联网+”大学生创新创业大赛河南省区选拔赛二等奖。获得专利两项。`}}
-	</article>
+荣获奖项：“互联网+”大学生创新创业大赛河南省区选拔赛二等奖。获得专利两项。`
+			}}
+			<p>
+				<img :src="getpic('peple.JPG')" />
+			</p>
+			<p><img :src="getpic('certificate.png')" /></p>
+		</article>
 	</div>
 </template>
+
+<script setup>
+import { getCurrentInstance } from "vue";
+const getpic = (name) => {
+	return getCurrentInstance().appContext.config.globalProperties.$getpic(
+		name
+	);
+};
+</script>
 
 <style scoped>
 .container {
 	max-width: 800px;
 }
 article {
-    white-space: pre-line;
+	white-space: pre-line;
+}
+img {
+	max-width: 100%;
 }
 </style>

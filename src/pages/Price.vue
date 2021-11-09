@@ -1,11 +1,11 @@
 <template>
-	<n-card :title="'2333'"
+	<n-card :title="'价格表'"
 		><n-data-table :columns="columns" :data="data" :pagination="pagination"
 	/></n-card>
 </template>
 
 <script>
-import { h, defineComponent } from "vue";
+import { h, defineComponent, ref } from "vue";
 import { NCard, NDataTable, NButton, useMessage } from "naive-ui";
 import priceData from "./price.json";
 
@@ -48,10 +48,12 @@ const createData = () => priceData;
 export default defineComponent({
 	components: {
 		NDataTable,
+		NCard
 	},
 	setup() {
 		const message = useMessage();
 		return {
+			
 			data: createData(),
 			columns: createColumns({
 				sendMail(rowData) {
