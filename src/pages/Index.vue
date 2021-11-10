@@ -28,7 +28,7 @@
 		</n-grid>
 		<n-grid :x-gap="12" :y-gap="8" :cols="3">
 			<n-grid-item v-for="item in datax">
-				<n-card :title="item.catergory_title">
+				<n-card style="height: 406px;" :title="item.catergory_title">
 					<n-space>
 						<n-tag
 							style="cursor: pointer"
