@@ -35,7 +35,7 @@
 荣获奖项：“互联网+”大学生创新创业大赛河南省区选拔赛二等奖。获得专利两项。`
 			}}
 			<p>
-				<img :src="getpic('peple.JPG')" />
+				<img :src="getpic('people.jpg')" />
 			</p>
 			<p><img :src="getpic('certificate.png')" /></p>
 		</article>
