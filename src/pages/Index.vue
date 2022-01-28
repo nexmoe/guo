@@ -27,16 +27,19 @@
 			</n-grid-item>
 		</n-grid>
 		<n-grid :x-gap="12" :y-gap="8" :cols="3">
-			<n-grid-item v-for="item in datax">
-				<n-card style="height: 406px;" :title="item.catergory_title">
-					<n-space>
-						<n-tag
-							style="cursor: pointer"
-							@click="routerpath()"
-							v-for="i in item.children"
-							>{{ i.title }}</n-tag
-						>
-					</n-space>
+			<n-grid-item v-for="cate1 in datax" :span="3">
+				<n-card  :title="cate1.catergory_title">
+					<template v-for="cate2 in cate1.children">
+						<a-typography-title :level="5" style="margin-top:10px;">{{cate2.title}}</a-typography-title>
+						<n-space>
+							<n-tag
+								style="cursor: pointer"
+								@click="routerpath()"
+								v-for="i in cate2.children"
+								>{{ i.title }}</n-tag
+							>
+						</n-space>
+					</template>
 				</n-card>
 			</n-grid-item>
 		</n-grid>
@@ -82,3 +85,4 @@ const routerpath = () => {
 	width: 100%;
 }
 </style>
+
